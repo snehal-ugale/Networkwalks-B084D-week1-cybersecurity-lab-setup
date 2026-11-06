@@ -21,11 +21,13 @@
 </p>
 ## 📌 Project Overview
 
-This project focuses on setting up a **virtual cybersecurity and penetration-testing laboratory** using VirtualBox and Kali Linux.
+As part of the Cybersecurity at Networkwalks programme, I undertook this project to set up my first virtual cybersecurity laboratory using Oracle VirtualBox and Kali Linux.
 
-The purpose of the lab is to create a controlled environment where cybersecurity tools, network scanning, reconnaissance, vulnerability assessment, and other security-testing activities can be performed safely and repeatedly.
+The objective was to establish a controlled virtual environment for learning Linux, understanding virtual networking, and preparing for future cybersecurity and penetration-testing exercises.
 
-The lab is configured on a private virtual network so that additional machines can be added later and used as targets for authorized security testing.
+The laboratory uses a dedicated NAT Network to provide network connectivity and support communication between additional virtual machines that may be introduced in future exercises.
+
+This project also provided an opportunity to develop practical troubleshooting skills while documenting the challenges encountered during setup.
 
 ---
 
@@ -59,3 +61,70 @@ It can be used for activities such as:
 - Web security testing
 - Exploitation practice
 - Security-tool experimentation
+# 🔎 Lab Verification
+
+| ✅ Test                        | 🧾 Command                      | 🎯 Expected Result              |
+| ----------------------------- | ------------------------------- | ------------------------------- |
+| 🌐 Check IP address           | `ip a`                          | Correct Kali IP displayed       |
+| 📡 Test gateway               | `ping 10.0.0.1`                 | Successful replies              |
+| 🌍 Test Internet connectivity | `ping 8.8.8.8`                  | Successful replies              |
+| 🔎 Test DNS resolution        | `nslookup networkwalks.com`     | Domain resolves                 |
+| 🧰 Verify Nmap                | `nmap --version`                | Nmap version displayed          |
+| 🔄 Verify snapshot            | Restore snapshot and run `ip a` | Baseline configuration restored |
+
+
+
+
+### Example Results
+
+```text
+IP Address:
+10.0.0.2/24
+
+Gateway:
+10.0.0.1
+
+DNS:
+10.0.0.1
+```
+# 💡 What I Learned
+
+Through this project, I gained practical experience setting up and configuring a virtual environment for cybersecurity practice.
+
+The most important concepts I learned include:
+
+### 1. NAT vs NAT Network
+
+A standard NAT configuration and a NAT Network serve different purposes.
+
+A NAT Network allows multiple virtual machines connected to the same virtual network to communicate with one another while providing network address translation for external connectivity.
+
+This makes it useful for building a multi-machine cybersecurity laboratory.
+
+### 2. Virtual Machine Networking
+
+I learned how VirtualBox virtual network adapters connect virtual machines to different types of networks and how network configuration affects communication between machines.
+
+### 3. Static IP Configuration
+
+I learned how to configure and verify IPv4 addressing, subnet masks, gateways, and DNS settings in Kali Linux.
+
+### 4. VM Snapshots
+
+I learned that a clean snapshot should be created **before performing risky or experimental activities**.
+
+This provides a known-good recovery point for future cybersecurity exercises.
+
+### 5. Troubleshooting and Documentation
+
+I learned that technical challenges such as antivirus detection and network connectivity failures require systematic investigation and troubleshooting.
+
+I also learned that documenting commands, configurations, screenshots, problems, and solutions is an important part of maintaining a professional cybersecurity project.
+
+---
+
+### 6. Practical Problem-Solving
+
+Beyond the technical configuration, I learned the importance of troubleshooting unfamiliar issues, researching possible solutions, testing configuration changes, and documenting the outcomes.
+
+The experience reinforced that setting up a cybersecurity laboratory involves more than installing tools; it requires an understanding of the underlying operating system, networking, and virtualisation concepts.
